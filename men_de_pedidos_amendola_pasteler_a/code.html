@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amendola Pastelería - Menú y Tienda Online</title>
+<!-- Google Fonts: EB Garamond & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#1f1b15",
+            "inverse-primary": "#e6bead",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#bc9787",
+            "on-tertiary-fixed-variant": "#60401a",
+            "on-error-container": "#93000a",
+            "outline": "#82746f",
+            "surface-container": "#f6ede2",
+            "on-secondary-container": "#4e6b56",
+            "primary-container": "#4a3024",
+            "primary": "#321b10",
+            "surface-container-highest": "#eae1d6",
+            "secondary": "#486550",
+            "tertiary-container": "#4d300b",
+            "on-primary-fixed-variant": "#5c4033",
+            "on-primary-fixed": "#2c160c",
+            "on-secondary-fixed": "#042010",
+            "secondary-fixed-dim": "#aeceb5",
+            "surface": "#fff8f2",
+            "surface-dim": "#e1d9ce",
+            "background": "#fff8f2",
+            "tertiary": "#331c00",
+            "on-tertiary-fixed": "#2b1700",
+            "inverse-on-surface": "#f8efe4",
+            "surface-container-low": "#fbf2e7",
+            "tertiary-fixed-dim": "#ecbe8d",
+            "primary-fixed": "#ffdbcc",
+            "surface-container-high": "#f0e7dc",
+            "outline-variant": "#d4c3bd",
+            "on-secondary-fixed-variant": "#314d39",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#e6bead",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#caebd0",
+            "tertiary-fixed": "#ffddbb",
+            "on-surface-variant": "#504440",
+            "surface-bright": "#fff8f2",
+            "on-tertiary-container": "#c2976a",
+            "inverse-surface": "#343029",
+            "on-surface": "#1f1b15",
+            "surface-tint": "#76574a",
+            "error": "#ba1a1a",
+            "secondary-container": "#caebd0",
+            "surface-variant": "#eae1d6",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.25rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "margin-desktop": "3rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "gutter-desktop": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["EB Garamond"],
+            "headline-xl-mobile": ["EB Garamond"],
+            "headline-md": ["EB Garamond"],
+            "headline-sm": ["EB Garamond"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["EB Garamond"],
+            "headline-lg-mobile": ["EB Garamond"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "fontWeight": "500" }],
+            "headline-xl-mobile": ["34px", { "lineHeight": "42px", "fontWeight": "600" }],
+            "headline-md": ["26px", { "lineHeight": "34px", "fontWeight": "500" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-xl": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-32">
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-margin h-16 w-full max-w-7xl mx-auto bg-surface dark:bg-inverse-surface border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none">
+<button aria-label="Abrir Menú" class="p-2 -ml-2 rounded-lg text-primary dark:text-inverse-primary hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<h1 class="font-headline-md text-headline-md tracking-tight text-primary dark:text-inverse-primary">Amendola Pastelería</h1>
+</div>
+<button aria-label="Carrito de compras" class="relative p-2 -mr-2 rounded-lg text-primary dark:text-inverse-primary hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+<span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-on-secondary">2</span>
+</button>
+</header>
+<!-- Main Canvas Content -->
+<main class="pt-20 px-margin max-w-lg mx-auto flex flex-col gap-6">
+<!-- Brand Welcome Hero Card with Injected Amendola Logo -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant/30 p-space-md shadow-sm">
+<div class="flex items-center gap-4">
+<!-- Logo from prompt -->
+<div class="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border border-outline-variant/50 shadow-sm bg-surface">
+<img alt="Amendola Pastelería Logotipo Artesanal" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfiqp0PTaQ6w7Yq96qixIScinsG34skDs08yuNAlsjXA6UpkLGFK7etjunIc_-g6GeXot2i1TH7x_eGj1Cy3r2_L_P8YQBntHZ22QuLBHhhqYMlv1LaRtl9kdMuD6_elAXxN3kZ9FZnyaT-orIfcaeKxAj1zJBf345M6-ts54i7_CeHYGeQSCJcQ6m1JT1bkCe7nhspt_dO7xC89ClD9EKd8pk7BOUfpxSBzedVdpImLp2Il1-n0NCourGgzGm3sEGyw"/>
+</div>
+<div class="flex-1">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary bg-secondary-container/60 px-2 py-0.5 rounded-full mb-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+            Pastelería Boutique
+          </span>
+<h2 class="font-headline-sm text-headline-sm text-primary leading-tight">¡Hola! ¿Qué se te antoja hoy?</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hecho con amor y paciencia cada mañana.</p>
+</div>
+</div>
+<!-- Fulfillment Delivery / Take Away Switcher -->
+<div class="mt-4 p-1 bg-surface-container-high rounded-lg flex gap-1">
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all duration-150" id="toggle-delivery">
+<span>🛵</span>
+<span>Delivery <span class="text-secondary font-semibold">30-45 min</span></span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-150" id="toggle-takeaway">
+<span>🛍️</span>
+<span>Take Away <span class="font-medium text-[11px] opacity-80">(Local)</span></span>
+</button>
+</div>
+<!-- Search Field -->
+<div class="relative mt-3">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[20px] text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Buscar cookies, croissants, waffles..." type="search"/>
+</div>
+</div>
+<!-- Highlighted Promo Banner -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-surface-container to-surface-container-high border border-outline-variant/40 p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-3">
+<div class="space-y-1">
+<div class="inline-block bg-tertiary-container text-tertiary-fixed text-label-sm font-label-sm px-2 py-0.5 rounded-full font-semibold">
+            ✨ Promo Dulce Semana
+          </div>
+<h3 class="font-headline-sm text-headline-sm text-primary">6 Cookies x $4.800</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Combinalas como más te guste. Ahorrás $900.</p>
+</div>
+<button class="shrink-0 bg-primary-container text-surface px-3.5 py-2 rounded-lg font-label-md text-label-md shadow hover:bg-primary transition-colors active:scale-95 duration-150 flex items-center gap-1">
+          Aprovechar
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Filter Chips (Horizontal Scroll) -->
+<section>
+<div class="flex items-center justify-between mb-2">
+<h4 class="font-headline-sm text-headline-sm text-primary">Categorías</h4>
+<span class="text-label-sm font-label-sm text-secondary font-semibold cursor-pointer">Ver todas</span>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-margin px-margin">
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all flex items-center gap-1.5">
+<span>🍪</span>
+<span>Cookies</span>
+</button>
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span>🧇</span>
+<span>Waffles</span>
+</button>
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span>🥐</span>
+<span>Medialunas</span>
+</button>
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span>🍞</span>
+<span>Budines &amp; Cakes</span>
+</button>
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span>☕</span>
+<span>Cafetería &amp; Bebidas</span>
+</button>
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-surface-container-low border border-outline-variant/50 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span>🎁</span>
+<span>Boxes &amp; Regalos</span>
+</button>
+</div>
+</section>
+<!-- Product Catalog List / Bento Grid -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-primary">Nuestras Creaciones</h4>
+<span class="text-body-sm font-body-sm text-on-surface-variant">5 delicias</span>
+</div>
+<!-- Product Card 1: Red Velvet Cookie (Featured Card) -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-md shadow-[0_4px_16px_rgba(74,48,36,0.05)] hover:shadow-[0_10px_24px_rgba(74,48,36,0.09)] transition-all duration-200 flex gap-4">
+<div class="relative w-28 h-28 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up artisanal red velvet cookie with an oozing liquid Nutella hazelnut cream center, baked to perfection with crisp crinkled exterior, displayed on rustic parchment paper in soft natural patisserie morning light with warm cocoa tones and eucalyptus leaf decoration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXIOOLLGJ5UloJ5SPlcudzhCKiHrmnzKNJCfiIql8S6a24iV5m2iMVBMY_-0EFzG_D28EOfbhpQD2m0c6-2j9HMSg1CExwRC1FYQXRcUBtkbz8QCvI_sQNr0215Y1IvnIvv8knCFGaR8FGPGoDoVW8J8FcYJyCeNEjTWv9KzjorKlr3ekwMY7FMO1c_ok7mxqbAdHNiWWs61ZYz0ayjHPt-kSInwvu9ckMfjd9KNxeSph2YhnhILUw"/>
+<span class="absolute top-1.5 left-1.5 bg-secondary text-on-secondary text-label-sm font-label-sm font-semibold px-2 py-0.5 rounded-full shadow-sm">
+            Favorito
+          </span>
+</div>
+<div class="flex flex-col justify-between flex-1">
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-medium tracking-wide">COOKIE ESPECIAL</span>
+<h5 class="font-headline-sm text-headline-sm text-primary leading-tight mt-0.5">Cookie Red Velvet con Nutella</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              Masa aterciopelada de cacao suave rellena de abundante corazón de Nutella cremosa.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-outline-variant/20">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$950</span>
+<button class="flex items-center justify-center gap-1 bg-secondary text-on-secondary px-3 py-1.5 rounded-lg text-label-md font-label-md shadow hover:bg-secondary/90 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2: Waffle Belga Artesanal -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-md shadow-[0_4px_16px_rgba(74,48,36,0.05)] hover:shadow-[0_10px_24px_rgba(74,48,36,0.09)] transition-all duration-200 flex gap-4">
+<div class="relative w-28 h-28 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Fresh golden Belgian waffle with deep pockets topped with freshly picked wild raspberries, blueberries, blackberries, a dollop of whipped clotted cream, and subtle maple syrup drizzle, photographed in warm boutique cafe sunlight on hand-thrown ceramic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpeN7OpmfTvoFIrSdxnTdSbOxazRP35vvx0a-rrwF5VEY0Pod6gVDf_sa5gExo3CSnUe8VPthLIoxFO_Kk8j-13setvT2aFfIhbHVUYznYvRcMt64sikFXE1MTGpsdo_yKs6PA1LyqhrzDmhhnnxwoFAj6_HXuzC-0jS6qwrei7h0huhrMEd2hnXAOSUiLMCS2XRKeRTHRJsD3_sk-LwpfGlPnmxg1j52PIXphAO27tFXCY327YVqo"/>
+</div>
+<div class="flex flex-col justify-between flex-1">
+<div>
+<span class="text-label-sm font-label-sm text-outline font-medium tracking-wide">WAFFLES ARTESANALES</span>
+<h5 class="font-headline-sm text-headline-sm text-primary leading-tight mt-0.5">Waffle Belga con Frutos Rojos</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              Masa madre leudada con perlas de azúcar, crema chantilly fresca y coulis de frutos silvestres.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-outline-variant/20">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$1.400</span>
+<button class="flex items-center justify-center gap-1 bg-secondary text-on-secondary px-3 py-1.5 rounded-lg text-label-md font-label-md shadow hover:bg-secondary/90 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3: Medialunas de Manteca glaseadas x 3 -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-md shadow-[0_4px_16px_rgba(74,48,36,0.05)] hover:shadow-[0_10px_24px_rgba(74,48,36,0.09)] transition-all duration-200 flex gap-4">
+<div class="relative w-28 h-28 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Trio of glistening golden-brown Argentine butter croissants medialunas with delicate sweet sugar syrup glaze, showcasing flaky laminated pastry layers, resting on warm beige linen cloth with morning bakery atmosphere and soft amber tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaY3RG865VBIFhzDcE2JzGir8Fn10_6v-CydrVF08Dfd5jNQ5RcByxVDAvjU22wiFZgkZHZcolhLWM-O0cJ-u16autJfVCej3mM-WcIh9ePT2XdZKxRxLFm7UmGr6oLQb0aVCiqZ-jucHXmSUBvIs0jJPrubKTDXyzfey4FZ8UHmNLUjk0iC0_g4ucnEbeCEATbrlW7DCuUoVA__1PzKoCYXedRHMZjXfh5iW0Hun9jZUaUxfKEGGU"/>
+</div>
+<div class="flex flex-col justify-between flex-1">
+<div>
+<span class="text-label-sm font-label-sm text-outline font-medium tracking-wide">VIENNOISERIE</span>
+<h5 class="font-headline-sm text-headline-sm text-primary leading-tight mt-0.5">Medialunas de Manteca (x3)</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              Hojaldre 100% manteca de campo, perfumadas con vainilla y pinceladas con almíbar artesanal.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-outline-variant/20">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$1.100</span>
+<button class="flex items-center justify-center gap-1 bg-secondary text-on-secondary px-3 py-1.5 rounded-lg text-label-md font-label-md shadow hover:bg-secondary/90 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 4: Budín de Limón y Arándanos -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-md shadow-[0_4px_16px_rgba(74,48,36,0.05)] hover:shadow-[0_10px_24px_rgba(74,48,36,0.09)] transition-all duration-200 flex gap-4">
+<div class="relative w-28 h-28 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Generous slice of moist lemon poppyseed blueberry loaf cake with thick white lemon royal icing drip, burst fresh blueberries baked inside, presented on an earthy ceramic plate in a cozy warm patisserie aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-siDdjFfCsTVSjVQLp6ALsIdc0ENCQPwYdNFTwGIuquYzo194j95ePbI776RFQmwVwfepRH3A7NZgpI3XBQ4C-Jwd2glSSTWMSqOiiE7CN69_J0hwB17e1NwAdmmhQqxFBM4asZvLjloct8qUc_Hyoneb6q7iwU_kRHNy9mIrjvdyPGUsGyBvWCsDeRs7rvBZveM7NuPsxUmIoK0hs2q02e0CuJie4CaEWL04UlPfnd7Quq5mzDUZ"/>
+</div>
+<div class="flex flex-col justify-between flex-1">
+<div>
+<span class="text-label-sm font-label-sm text-outline font-medium tracking-wide">PASTELERÍA CASERA</span>
+<h5 class="font-headline-sm text-headline-sm text-primary leading-tight mt-0.5">Budín de Limón y Arándanos</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              Extra húmedo con ralladura de limones seleccionados, arándanos enteros y glasé cítrico crocante.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-outline-variant/20">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$1.850</span>
+<button class="flex items-center justify-center gap-1 bg-secondary text-on-secondary px-3 py-1.5 rounded-lg text-label-md font-label-md shadow hover:bg-secondary/90 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 5: Cookie Choco Chips Clásica estilo NY -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-space-md shadow-[0_4px_16px_rgba(74,48,36,0.05)] hover:shadow-[0_10px_24px_rgba(74,48,36,0.09)] transition-all duration-200 flex gap-4">
+<div class="relative w-28 h-28 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Thick and chunky New York style chocolate chip cookie with melted semi-sweet chocolate pools, sea salt flakes on top, warm golden brown edges, breaking slightly open on a bakery parchment background with soft warm ambient glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5IN6rIz98XD0TyVmrjwLZzPckc4DMWUuHrMJ9FPbo8TmhU11Ko2cuSXZRn3WOSCfM3ALFcAe9zOnpaFdp55deMJ3J7qsZdEBEuJYgDDPoUxQv37-GY3to-vUgLjG6uxbhMM_VlwcDxwPb3nQvSBREbWl-hIVDx-MZl-79eaFgnS4uJN56gFfqO1bz0R9Gntoo1t0PhquM9T_ImvyEYq6ZK30xwNpHjEKKT2HCj5IQQUBfwv5A9-i4"/>
+</div>
+<div class="flex flex-col justify-between flex-1">
+<div>
+<span class="text-label-sm font-label-sm text-outline font-medium tracking-wide">CLÁSICO NYC</span>
+<h5 class="font-headline-sm text-headline-sm text-primary leading-tight mt-0.5">Cookie Choco Chips Clásica</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+              Estilo Levain NYC, crocante por fuera y suave por dentro, con trozos de chocolate semiamargo y escamas de sal.
+            </p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-outline-variant/20">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$900</span>
+<button class="flex items-center justify-center gap-1 bg-secondary text-on-secondary px-3 py-1.5 rounded-lg text-label-md font-label-md shadow hover:bg-secondary/90 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Agregar</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Artisan Chef Recommendation Banner -->
+<div class="p-space-md rounded-xl bg-surface-container border border-outline-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">spa</span>
+<div class="space-y-0.5">
+<h6 class="font-label-lg text-label-lg text-primary font-semibold">Consejo del Pastelero</h6>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Entibiá tus cookies 10 segundos en microondas o 3 minutos a horno bajo antes de comerlas para revivir el centro fundido.
+        </p>
+</div>
+</div>
+</main>
+<!-- Sticky Floating Order Banner (Docked above bottom navigation) -->
+<div class="fixed bottom-16 left-0 right-0 z-40 px-margin pb-2 max-w-lg mx-auto pointer-events-none">
+<div class="pointer-events-auto bg-primary-container text-surface p-3 px-4 rounded-xl shadow-[0_12px_32px_rgba(74,48,36,0.3)] flex items-center justify-between active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface/15 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface text-[18px]">shopping_bag</span>
+</div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-surface">2 productos • $2.350</span>
+<p class="font-label-sm text-label-sm text-on-primary-container">Cookie Red Velvet + Medialunas</p>
+</div>
+</div>
+<div class="flex items-center gap-1 font-label-md text-label-md text-secondary-fixed bg-secondary/80 px-3 py-1.5 rounded-lg font-semibold">
+<span>Ver pedido</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Shared Component: BottomNavBar (Active Destination: Menú) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around h-16 w-full max-w-7xl mx-auto px-margin pb-safe bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant/20 dark:border-outline/10 shadow-[0_-4px_16px_rgba(74,48,36,0.06)] dark:shadow-none">
+<!-- Tab 1: Menú (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-semibold gap-1 py-1 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">bakery_dining</span>
+<span class="text-label-sm font-label-sm tracking-wide">Menú</span>
+</a>
+<!-- Tab 2: Cart -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant gap-1 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]">shopping_cart</span>
+<span class="text-label-sm font-label-sm tracking-wide">Cart</span>
+</a>
+<!-- Tab 3: Orders -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant gap-1 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+<span class="text-label-sm font-label-sm tracking-wide">Orders</span>
+</a>
+<!-- Tab 4: Admin -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant gap-1 py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]">admin_panel_settings</span>
+<span class="text-label-sm font-label-sm tracking-wide">Admin</span>
+</a>
+</nav>
+<script>
+    // Lightweight toggle for delivery / take away
+    const deliveryBtn = document.getElementById('toggle-delivery');
+    const takeawayBtn = document.getElementById('toggle-takeaway');
+
+    deliveryBtn.addEventListener('click', () => {
+      deliveryBtn.className = "flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all duration-150";
+      takeawayBtn.className = "flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-150";
+    });
+
+    takeawayBtn.addEventListener('click', () => {
+      takeawayBtn.className = "flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all duration-150";
+      deliveryBtn.className = "flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-150";
+    });
+  </script>
+</body></html>
