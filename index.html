@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amendola Pastelería — Hub de Prototipos</title>
+  <!-- Tipografías de Google Fonts: EB Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Estilos del Hub de Prototipos -->
+  <link rel="stylesheet" href="./styles/hub.css" />
+</head>
+<body class="hub-body">
+
+  <div class="hub-container">
+    <!-- Encabezado Principal del Hub -->
+    <header class="hub-header">
+      <div class="hub-badge">
+        <span>✨ Propuesta de Diseño: Artisanal Warmth</span>
+      </div>
+      <h1 class="hub-title">Amendola Pastelería</h1>
+      <p class="hub-subtitle">
+        Hub de prototipos interactivos navegables para demostración de diseño, estructura editorial y recorridos de usuario.
+      </p>
+      <div class="hub-disclaimer">
+        ℹ️ Demo visual interactiva. Los datos y funciones son ilustrativos.
+      </div>
+    </header>
+
+    <!-- Barra de Herramientas, Filtros y Especificación -->
+    <div class="hub-toolbar">
+      <div class="hub-filters">
+        <button class="hub-filter-btn active" data-filter="todos" type="button">Todas las Pantallas</button>
+        <button class="hub-filter-btn" data-filter="desktop" type="button">🖥️ Priorizar Desktop</button>
+        <button class="hub-filter-btn" data-filter="mobile" type="button">📱 Priorizar Mobile</button>
+      </div>
+      <a class="hub-system-link" href="./design-system/DESIGN.md" title="Ver especificación del sistema de diseño">
+        📖 Sistema de Diseño (DESIGN.md)
+      </a>
+    </div>
+
+    <!-- Grilla con las 4 Secciones del Prototipo -->
+    <main class="hub-grid">
+
+      <!-- Tarjeta 1: Menú y Tienda Online -->
+      <article class="hub-card">
+        <div class="hub-card-preview">
+          <img class="hub-card-img" src="./screens/menu/screen.png" alt="Captura de Menú y Tienda Online" loading="lazy" />
+          <span class="hub-card-device-badge">Desktop + Mobile</span>
+        </div>
+        <div class="hub-card-body">
+          <span class="hub-card-tag">Catálogo &amp; Obrador</span>
+          <h2 class="hub-card-title">Menú y Tienda Online</h2>
+          <p class="hub-card-desc">
+            Landing de presentación, obrador en Recoleta, selector de modalidad Takeaway / Delivery, catálogo de especialidades y barra flotante de pedido.
+          </p>
+          <div class="hub-card-actions">
+            <a class="hub-btn hub-btn-primary hub-btn-desktop" href="./screens/menu/desktop.html">
+              🖥️ Ver Desktop
+            </a>
+            <a class="hub-btn hub-btn-secondary hub-btn-mobile" href="./screens/menu/mobile.html">
+              📱 Ver Mobile
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tarjeta 2: Detalle de Producto -->
+      <article class="hub-card">
+        <div class="hub-card-preview">
+          <img class="hub-card-img" src="./screens/producto/screen.png" alt="Captura de Detalle de Producto" loading="lazy" />
+          <span class="hub-card-device-badge">Desktop + Mobile</span>
+        </div>
+        <div class="hub-card-body">
+          <span class="hub-card-tag">Ficha de Producto</span>
+          <h2 class="hub-card-title">Detalle de Producto</h2>
+          <p class="hub-card-desc">
+            Super Cookie New York, selección obligatoria de formato, selector de toppings adicionales, notas para cocina y cálculo reactivo de total.
+          </p>
+          <div class="hub-card-actions">
+            <a class="hub-btn hub-btn-primary hub-btn-desktop" href="./screens/producto/desktop.html">
+              🖥️ Ver Desktop
+            </a>
+            <a class="hub-btn hub-btn-secondary hub-btn-mobile" href="./screens/producto/mobile.html">
+              📱 Ver Mobile
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tarjeta 3: Checkout y Promociones -->
+      <article class="hub-card">
+        <div class="hub-card-preview">
+          <img class="hub-card-img" src="./screens/checkout/screen.png" alt="Captura de Checkout y Promociones" loading="lazy" />
+          <span class="hub-card-device-badge">Desktop + Mobile</span>
+        </div>
+        <div class="hub-card-body">
+          <span class="hub-card-tag">Flujo de Pedido</span>
+          <h2 class="hub-card-title">Checkout &amp; Entrega</h2>
+          <p class="hub-card-desc">
+            Resumen de productos, aplicación de cupón promocional, franja horaria programada, métodos de pago y modal de confirmación asistida.
+          </p>
+          <div class="hub-card-actions">
+            <a class="hub-btn hub-btn-primary hub-btn-desktop" href="./screens/checkout/desktop.html">
+              🖥️ Ver Desktop
+            </a>
+            <a class="hub-btn hub-btn-secondary hub-btn-mobile" href="./screens/checkout/mobile.html">
+              📱 Ver Mobile
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tarjeta 4: Panel de Administrador -->
+      <article class="hub-card">
+        <div class="hub-card-preview">
+          <img class="hub-card-img" src="./screens/admin/screen.png" alt="Captura de Panel de Administrador" loading="lazy" />
+          <span class="hub-card-device-badge">Desktop + Mobile</span>
+        </div>
+        <div class="hub-card-body">
+          <span class="hub-card-tag">Backoffice &amp; Gestión</span>
+          <h2 class="hub-card-title">Panel de Administrador</h2>
+          <p class="hub-card-desc">
+            Tablero de control para el equipo del taller, estado online de tienda, pedidos en preparación, métricas clave y despacho de comandas.
+          </p>
+          <div class="hub-card-actions">
+            <a class="hub-btn hub-btn-primary hub-btn-desktop" href="./screens/admin/desktop.html">
+              🖥️ Ver Desktop
+            </a>
+            <a class="hub-btn hub-btn-secondary hub-btn-mobile" href="./screens/admin/mobile.html">
+              📱 Ver Mobile
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Pie de Página del Hub -->
+    <footer class="hub-footer">
+      <p>Amendola Pastelería Artesanal &copy; 2024 &bull; Recoleta, Buenos Aires. Prototipo estático optimizado para Netlify.</p>
+    </footer>
+  </div>
+
+  <!-- Scripts del Hub -->
+  <script src="./scripts/hub.js" defer></script>
+</body>
+</html>

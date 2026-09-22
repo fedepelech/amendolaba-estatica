@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard | Amendola Pastelería</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: EB Garamond & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#76574a",
+            "secondary": "#486550",
+            "on-tertiary-fixed-variant": "#60401a",
+            "inverse-primary": "#e6bead",
+            "primary-container": "#4a3024",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fff8f2",
+            "on-primary-container": "#bc9787",
+            "surface-container-high": "#f0e7dc",
+            "primary": "#321b10",
+            "secondary-fixed-dim": "#aeceb5",
+            "background": "#fff8f2",
+            "surface-container-low": "#fbf2e7",
+            "tertiary-container": "#4d300b",
+            "on-surface": "#1f1b15",
+            "tertiary-fixed": "#ffddbb",
+            "inverse-surface": "#343029",
+            "surface-variant": "#eae1d6",
+            "on-tertiary-fixed": "#2b1700",
+            "on-surface-variant": "#504440",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#4e6b56",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#c2976a",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#e6bead",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#5c4033",
+            "primary-fixed": "#ffdbcc",
+            "tertiary": "#331c00",
+            "outline": "#82746f",
+            "surface": "#fff8f2",
+            "on-secondary-fixed": "#042010",
+            "tertiary-fixed-dim": "#ecbe8d",
+            "secondary-fixed": "#caebd0",
+            "on-secondary-fixed-variant": "#314d39",
+            "surface-container": "#f6ede2",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#eae1d6",
+            "on-error": "#ffffff",
+            "surface-dim": "#e1d9ce",
+            "on-background": "#1f1b15",
+            "outline-variant": "#d4c3bd",
+            "on-primary-fixed": "#2c160c",
+            "inverse-on-surface": "#f8efe4",
+            "secondary-container": "#caebd0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.25rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "gutter-desktop": "2rem",
+            "margin-desktop": "3rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["EB Garamond"],
+            "headline-lg-mobile": ["EB Garamond"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["EB Garamond"],
+            "headline-lg": ["EB Garamond"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["EB Garamond"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-xl": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-md": ["26px", { "lineHeight": "34px", "fontWeight": "500" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+            "headline-xl-mobile": ["34px", { "lineHeight": "42px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-xl": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top Global Header (Shared Component Anchored) -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-8 max-w-7xl mx-auto h-20">
+<!-- Brand Logo & Store Status Indicator -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-3" href="#">
+<img alt="Amendola Pastelería Logo" class="h-12 w-12 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi8u6AbGceX8zcpUoXHNAgsO5ildqs8r1zXdtt21Sl_XZe2YBNKKBRmycDENCmVpIUKHszNSBqg5WpsNqN6om_az0oYlmE1bCJ_kFWS19o91OQpKPqK8gh7jGbdOiQpKUsI8ckXUoP_Ea9cIQFFH50W2dmRVVYsaoUMJfB3mIMnjRNNnWrDIrF7wY1NUmxucKrJxf2Lb4Nj0P5DHuNSuuFh3HBWTC7tDJI6SwdxNYSh8_Ta9bhpPbJexwMmwkzZeFebA"/>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary dark:text-inverse-primary tracking-wide">Amendola Pastelería</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span>Backoffice</span>
+<span>•</span>
+<span class="text-secondary font-medium">Taller &amp; Boutique</span>
+</span>
+</div>
+</a>
+<!-- Store status badge (Online indicator) -->
+<div class="hidden lg:flex items-center gap-2 bg-secondary-fixed/50 text-secondary px-3 py-1 rounded-full ring-1 ring-secondary/20">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-tight">● Tienda Abierta (Online)</span>
+</div>
+</div>
+<!-- Navigation Links with Admin Active State Logic -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Menú</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Promociones</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Nosotros</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Contacto</a>
+<a class="text-primary dark:text-inverse-primary font-label-lg text-label-lg border-b-2 border-primary dark:border-inverse-primary pb-1 font-semibold" href="#">Admin</a>
+</nav>
+<!-- Trailing Controls: Live Time, Notifications & Admin Profile -->
+<div class="flex items-center gap-4">
+<!-- Live Clock -->
+<div class="hidden xl:flex items-center gap-1.5 text-on-surface-variant bg-surface-container px-3 py-1.5 rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary" style="font-size: 18px;">schedule</span>
+<span class="font-label-sm text-label-sm font-medium" id="live-clock">10:45 AM</span>
+</div>
+<!-- Notification Bell -->
+<button aria-label="Notificaciones" class="relative p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" type="button">
+<span class="material-symbols-outlined" style="font-size: 22px;">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-surface"></span>
+</button>
+<!-- Admin user profile pill -->
+<div class="flex items-center gap-3 pl-2 border-l border-outline-variant/40">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm">
+            P
+          </div>
+<div class="hidden sm:flex flex-col text-left">
+<span class="font-label-sm text-label-sm font-semibold text-primary">Pastelería Central</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px] leading-tight">Administrador Recoleta</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Horizontal Admin Sub-Navigation / Tabs -->
+<div class="bg-surface-container-low shadow-sm sticky top-20 z-40">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex items-center space-x-1 sm:space-x-4 overflow-x-auto scrollbar-none py-2">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-lg text-label-lg bg-surface-container-lowest text-primary shadow-sm ring-1 ring-outline-variant/30 font-semibold transition-all">
+<span class="material-symbols-outlined text-primary" style="font-size: 18px;">space_dashboard</span>
+<span>Dashboard &amp; Ventas</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" style="font-size: 18px;">bakery_dining</span>
+<span>Gestión de Artículos (Menú)</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" style="font-size: 18px;">loyalty</span>
+<span>Códigos de Promoción</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" style="font-size: 18px;">skillet</span>
+<span>Control de Pedidos en Vivo</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-label-sm font-bold text-[10px]">3</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" style="font-size: 18px;">storefront</span>
+<span>Configuración de Tienda</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Canvas (~1280px-1440px wide desktop container) -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-8 py-8 space-y-10">
+<!-- Header Banner & Quick Insights -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-outline-variant/30">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Panel de Control &amp; Despacho</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Visión general en tiempo real del obrador artesanal y tienda digital.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-3 py-1.5 rounded-lg border border-outline-variant/30">
+          Última actualización: hace 2 min
+        </span>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-container text-primary font-label-lg text-label-lg border border-outline-variant/40 transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-size: 18px;">refresh</span>
+<span>Actualizar</span>
+</button>
+</div>
+</div>
+<!-- Top KPI Summary Cards (4 Columns) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1: Ventas Hoy -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Ventas Hoy</span>
+<span class="font-headline-lg text-headline-lg text-primary mt-1 font-bold tracking-tight">$84.200</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-size: 22px;">payments</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+            +18% vs ayer
+          </span>
+<span class="text-on-surface-variant">24 pedidos completados</span>
+</div>
+</div>
+<!-- Card 2: Pedidos en Cocina -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Pedidos en Cocina</span>
+<span class="font-headline-lg text-headline-lg text-primary mt-1 font-bold tracking-tight">3 en preparación</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-size: 22px;">outdoor_grill</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-tertiary-fixed-variant font-medium">Horno y empaquetado</span>
+<span class="font-semibold text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Ritmo normal
+          </span>
+</div>
+</div>
+<!-- Card 3: Alertas de Stock -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Alertas de Stock</span>
+<span class="font-headline-lg text-headline-lg text-error mt-1 font-bold tracking-tight">2 artículos</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-size: 22px;">inventory_2</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-error font-medium">Agotados o con poco stock</span>
+<a class="text-primary font-semibold hover:underline flex items-center gap-0.5" href="#articulos">
+            Ver <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4: Ticket Promedio -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Ticket Promedio</span>
+<span class="font-headline-lg text-headline-lg text-primary mt-1 font-bold tracking-tight">$3.508</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-size: 22px;">receipt_long</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Por pedido online/takeaway</span>
+<span class="text-secondary font-semibold">+6.4% esta semana</span>
+</div>
+</div>
+</section>
+<!-- SECTION 1: Gestión de Catálogo & Artículos -->
+<section class="bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-sm border border-outline-variant/30 space-y-6" id="articulos">
+<!-- Section Header & Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 22px;">menu_book</span>
+<h2 class="font-headline-md text-headline-md text-primary">Gestión de Catálogo &amp; Artículos</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Administra recetas, precios y disponibilidad en el escaparate digital.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-primary text-on-primary hover:bg-[#3A241A] px-5 py-2.5 rounded-lg font-label-lg text-label-lg flex items-center gap-2 shadow-sm transition-all duration-200">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+<span>+ Nuevo Artículo</span>
+</button>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3 pt-2">
+<div class="md:col-span-6 lg:col-span-7 relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-lg border border-outline-variant/40 text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-on-surface-variant/50" placeholder="Buscar por nombre o categoría..." type="text"/>
+</div>
+<div class="md:col-span-3 lg:col-span-3">
+<select class="w-full py-2 px-3 bg-surface-container-low rounded-lg border border-outline-variant/40 text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+<option value="">Todas las Categorías</option>
+<option value="cookies">Cookies &amp; Galletas</option>
+<option value="waffles">Waffles &amp; Masas Dulces</option>
+<option value="budines">Budines &amp; Pastelería Casera</option>
+<option value="viennoiserie">Viennoiserie &amp; Medialunas</option>
+<option value="tortas">Tortas de Celebración</option>
+</select>
+</div>
+<div class="md:col-span-3 lg:col-span-2">
+<select class="w-full py-2 px-3 bg-surface-container-low rounded-lg border border-outline-variant/40 text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+<option value="">Estado: Todos</option>
+<option value="disponible">Disponibles</option>
+<option value="pausado">Pausados</option>
+<option value="agotado">Agotados</option>
+</select>
+</div>
+</div>
+<!-- Products Data Table -->
+<div class="overflow-x-auto rounded-lg border border-outline-variant/30">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/80 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/30">
+<th class="py-3.5 px-4 font-semibold">Artículo</th>
+<th class="py-3.5 px-4 font-semibold">Categoría</th>
+<th class="py-3.5 px-4 font-semibold">Precio Unit.</th>
+<th class="py-3.5 px-4 font-semibold">Stock / Alerta</th>
+<th class="py-3.5 px-4 font-semibold">Visibilidad</th>
+<th class="py-3.5 px-4 font-semibold text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-md text-body-md">
+<!-- Item 1: Cookie Red Velvet -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-lg object-cover ring-1 ring-outline-variant/30 shadow-sm flex-shrink-0" data-alt="A gourmet artisanal red velvet cookie with chunks of premium white chocolate cream sitting on textured parchment paper, soft bakery lighting, warm cocoa and clotted cream undertones, close-up shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaEwQTYN2h1mnFxqdERXvVDZnmaK8YrBGew9bMvmdYydJniqM5r4b6DNL2Qd-phg3g0jzYXnws6y9eNvt4eoZoh86JmOTtaR6iEcNhoR1MTI5rRcNbHDhItA0M23q8jW4hFNiK9flUtxaj-xprNTqitDVI6_VrjXA0iMFlktu6PnqaQau0tmo8vbSr_HgN2cB2l94OhdiujCkaL_-PEV_kgRL--fYRiEioCH56HoaYxgISedoLy4bY"/>
+<div>
+<span class="font-semibold text-primary block leading-tight">Cookie Red Velvet</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Rellena de chocolate blanco &amp; vainilla</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface">Cookies &amp; Galletas</td>
+<td class="py-3 px-4 font-semibold text-primary">$950</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 18 unidades
+                </span>
+</td>
+<td class="py-3 px-4">
+<label class="inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="relative w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+<span class="ms-2 font-label-sm text-label-sm text-on-surface font-medium">Disponible</span>
+</label>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Editar">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Duplicar">
+<span class="material-symbols-outlined" style="font-size: 18px;">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors" title="Eliminar">
+<span class="material-symbols-outlined" style="font-size: 18px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 2: Waffle Belga con Frutos -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-lg object-cover ring-1 ring-outline-variant/30 shadow-sm flex-shrink-0" data-alt="A golden caramelized Belgian waffle garnished with freshly picked berries, light organic honey drizzle, and fresh mint leaves, displayed on a clean beige ceramic plate in warm natural morning daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo3zpqB8M4s56OANS4ZftyScJFeKKIcMNLwMefblmel58b4VB68VtX13pSIaPUmxiGxRG7_oaxYiw5-j41c1ImxWHzpdHyO46ElGpf5L5ZChS_WaG0A3c7lWZYYW_fokoNJqVdjY7OmotFEKt1OeVVsPh-Cq-296DTGL45dn9lDHTM6kvlBU_zvQhICf57JsGg0MBZQ5v9DVJNYfLIisTIf5l0G6j-feNP-aA8oVtTXJnqfsswlwYy"/>
+<div>
+<span class="font-semibold text-primary block leading-tight">Waffle Belga con Frutos</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Masa fermentada con azúcar perlado</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface">Waffles &amp; Masas</td>
+<td class="py-3 px-4 font-semibold text-primary">$1.400</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 12 unidades
+                </span>
+</td>
+<td class="py-3 px-4">
+<label class="inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="relative w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+<span class="ms-2 font-label-sm text-label-sm text-on-surface font-medium">Disponible</span>
+</label>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Editar">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Duplicar">
+<span class="material-symbols-outlined" style="font-size: 18px;">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors" title="Eliminar">
+<span class="material-symbols-outlined" style="font-size: 18px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 3: Budín de Zanahoria & Nueces -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-lg object-cover ring-1 ring-outline-variant/30 shadow-sm flex-shrink-0" data-alt="A rich handcrafted carrot cake loaf with roasted walnuts and a delicate cream cheese frosting ribbon, styled on a warm rustic wooden pastry board under soft artisan bakery lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHoipU0pnx4rHQ7KBp2auhIhzcilaOYy4LKmCuyxua1FKZRkZtEE0IspCe8tge2AF0LPf4FJJ_C8ehZPQvrytjdGuxc-ayYSk-FtOxASNu7Znzb61c63yZTxFtmbSifZHrh9HJ6SaG1WI9kzOlQ4kmGSVzE7M0shuubddlh2XYCrcPUqqh7NbCLzosmI_q-2dmGLz1pEoeGEzOYVHDVo3iN0jXZBL5-1ZTxmOwysTQhqKZCznkPTLa"/>
+<div>
+<span class="font-semibold text-primary block leading-tight">Budín de Zanahoria &amp; Nueces</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Frosting cítrico de queso crema</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface">Budines &amp; Pastelería</td>
+<td class="py-3 px-4 font-semibold text-primary">$1.900</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> 2 porciones (Poco stock)
+                </span>
+</td>
+<td class="py-3 px-4">
+<label class="inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="relative w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+<span class="ms-2 font-label-sm text-label-sm text-on-surface font-medium">Disponible</span>
+</label>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Editar">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Duplicar">
+<span class="material-symbols-outlined" style="font-size: 18px;">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors" title="Eliminar">
+<span class="material-symbols-outlined" style="font-size: 18px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 4: Medialunas x3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-lg object-cover ring-1 ring-outline-variant/30 shadow-sm flex-shrink-0" data-alt="Three glistening golden buttery croissants medialunas coated with fragrant artisanal orange syrup glaze, placed on warm sand-beige linen cloth, ambient patisserie glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFMsM-R7JcPpc52MQ86kT4Uas_1LZUM0Dp8a0u3rnwBb-GA8gaSZszS1-GnAO9IBRI1x3wXaqHAaEhmGbJmFtjTnsX3dMSkm40ope-FTPNGt4hehlwTUfsnLlW2sc1x4yx12IHCh-icJob_7p9g3srbrr19OMXK__szaO08geq2B8IbGZWhAjQy8g9leFGn0NZ4Hj_tGKSig17gKii9nHLctJ7twDj7vZJsV1_9JCnsIbFzMnBmCdg"/>
+<div>
+<span class="font-semibold text-primary block leading-tight">Medialunas x3</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Manteca pura con almíbar de azahar</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface">Viennoiserie</td>
+<td class="py-3 px-4 font-semibold text-primary">$1.100</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-variant text-on-surface-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> 0 packs (Agotado)
+                </span>
+</td>
+<td class="py-3 px-4">
+<label class="inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="relative w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+<span class="ms-2 font-label-sm text-label-sm text-on-surface-variant font-medium">Pausado</span>
+</label>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Editar">
+<span class="material-symbols-outlined" style="font-size: 18px;">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Duplicar">
+<span class="material-symbols-outlined" style="font-size: 18px;">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors" title="Eliminar">
+<span class="material-symbols-outlined" style="font-size: 18px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Count -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Mostrando 4 de 28 productos en catálogo</span>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1.5 rounded border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container disabled:opacity-50" disabled="">Anterior</button>
+<button class="px-3 py-1.5 rounded bg-primary text-on-primary font-semibold">1</button>
+<button class="px-3 py-1.5 rounded border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container">2</button>
+<button class="px-3 py-1.5 rounded border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container">3</button>
+<button class="px-3 py-1.5 rounded border border-outline-variant/30 text-on-surface-variant hover:bg-surface-container">Siguiente</button>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Gestión de Códigos de Promoción & Cupones -->
+<section class="bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-sm border border-outline-variant/30 space-y-6">
+<!-- Section Header & Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 22px;">loyalty</span>
+<h2 class="font-headline-md text-headline-md text-primary">Gestión de Códigos de Promoción &amp; Cupones</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Define beneficios, descuentos temporales y campañas para clientes de la pastelería.</p>
+</div>
+<button class="bg-secondary text-on-secondary hover:bg-[#3E5944] px-5 py-2.5 rounded-lg font-label-lg text-label-lg flex items-center gap-2 shadow-sm transition-all duration-200">
+<span class="material-symbols-outlined" style="font-size: 18px;">add_circle</span>
+<span>+ Crear Nuevo Cupón</span>
+</button>
+</div>
+<!-- Coupons Table -->
+<div class="overflow-x-auto rounded-lg border border-outline-variant/30">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/80 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/30">
+<th class="py-3.5 px-4 font-semibold">Código</th>
+<th class="py-3.5 px-4 font-semibold">Tipo &amp; Alcance</th>
+<th class="py-3.5 px-4 font-semibold">Estado</th>
+<th class="py-3.5 px-4 font-semibold">Usos Realizados</th>
+<th class="py-3.5 px-4 font-semibold">Vencimiento</th>
+<th class="py-3.5 px-4 font-semibold text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-md text-body-md">
+<!-- Cupón 1: AMENDOLA15 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 18px;">confirmation_number</span>
+<span class="font-bold tracking-wider text-primary font-mono bg-surface-container px-2.5 py-1 rounded border border-outline-variant/40">AMENDOLA15</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="font-medium text-on-surface">15% Descuento General</span>
+<span class="block text-on-surface-variant font-label-sm text-label-sm">Válido en todo el catálogo</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Activo
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="w-40 space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="font-semibold text-primary">42 / 100</span>
+<span class="text-on-surface-variant">42%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 42%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="font-medium text-on-surface">Fin de mes</span>
+<span class="block text-on-surface-variant font-label-sm text-label-sm">30 Nov 2024</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Editar Cupón">
+<span class="material-symbols-outlined" style="font-size: 18px;">tune</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Pausar">
+<span class="material-symbols-outlined" style="font-size: 18px;">pause_circle</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors" title="Eliminar">
+<span class="material-symbols-outlined" style="font-size: 18px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cupón 2: DULCECOOKIES -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 18px;">confirmation_number</span>
+<span class="font-bold tracking-wider text-primary font-mono bg-surface-container px-2.5 py-1 rounded border border-outline-variant/40">DULCECOOKIES</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="font-medium text-on-surface">$500 OFF en categoría Cookies</span>
+<span class="block text-on-surface-variant font-label-sm text-label-sm">Compra mínima $3.000</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Activo
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="space-y-0.5">
+<span class="font-semibold text-primary font-label-sm text-label-sm">Ilimitado</span>
+<span class="block text-on-surface-variant font-label-sm text-label-sm">88 canjes totales</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="font-medium text-on-surface">31 Dic</span>
+<span class="block text-on-surface-variant font-label-sm text-label-sm">Campaña Fiestas</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Editar Cupón">
+<span class="material-symbols-outlined" style="font-size: 18px;">tune</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Pausar">
+<span class="material-symbols-outlined" style="font-size: 18px;">pause_circle</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors" title="Eliminar">
+<span class="material-symbols-outlined" style="font-size: 18px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cupón 3: BIENVENIDA -->
+<tr class="hover:bg-surface-container-low/40 transition-colors opacity-80">
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" style="font-size: 18px;">confirmation_number</span>
+<span class="font-bold tracking-wider text-on-surface-variant font-mono bg-surface-variant/50 px-2.5 py-1 rounded border border-outline-variant/30 line-through">BIENVENIDA</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="font-medium text-on-surface">Envío Gratis en 1ra compra</span>
+<span class="block text-on-surface-variant font-label-sm text-label-sm">Clientes nuevos</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-variant text-on-surface-variant font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Inactivo
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="w-40 space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="font-semibold text-on-surface-variant">150 / 150</span>
+<span class="text-error font-medium">Cupo lleno</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="font-medium text-error">Expirado</span>
+<span class="block text-on-surface-variant font-label-sm text-label-sm">Límite alcanzado</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-secondary-container/40 transition-colors" title="Reactivar">
+<span class="material-symbols-outlined" style="font-size: 18px;">replay</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/40 transition-colors" title="Eliminar">
+<span class="material-symbols-outlined" style="font-size: 18px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Artisan Chef's Note Banner -->
+<div class="bg-surface-container rounded-xl p-6 border border-on-tertiary-container/30 flex items-start gap-4 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-secondary" style="font-size: 24px;">cookie</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Nota del Chef &amp; Recomendación de Obrador</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          La producción de viennoiserie con masa madre ingresa al segundo turno de fermentación a las 14:00 hs. Asegúrate de actualizar el stock de las <strong>Medialunas x3</strong> antes de habilitar los pedidos de la tarde en Recoleta.
+        </p>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component Exact Implementation) -->
+<footer class="bg-surface-container dark:bg-surface-container-high w-full mt-auto">
+<div class="w-full px-8 py-16 max-w-7xl mx-auto flex flex-col gap-10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<img alt="Amendola Pastelería Logo" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO7GbX77CQz5H-afJaRPcmaVJyOvemaZIb1AZHqO_COqPSTpj7k3BrDCKh-mgjC0D0mXaPlayIQApC22JXB_VHOniAj6waxyX8dMIy6OdaNP2XiAbP1eKPtQoJDfq94ejZTK3WppMsGD729ltNlilon2u9C-5ycNIE67hYHb7yvjjnnds9siBlghh9LdzPAF_LnZPoJccD6bV_fTR0PFKQ5vWuS2q4Fc2oOOB1q8vZ-q3F5OV_pQTWDjK2Gays8VCcaQ"/>
+<div>
+<span class="font-headline-md text-headline-md text-primary dark:text-inverse-primary">Amendola Pastelería</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant">Pastelería de Autor, Viennoiserie &amp; Café de Especialidad</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Menú de Temporada</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Nosotros &amp; Taller</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Horarios: Mar-Dom 8:00 a 20:00</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Recoleta, Quintana 452</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Políticas de Entrega</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Newsletter</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+<p class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm">
+          © 2024 Amendola Pastelería Artesanal. Recoleta, Buenos Aires. Todos los derechos reservados.
+        </p>
+<span class="text-primary dark:text-inverse-primary font-medium font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Sistema de Gestión Operativa v2.4
+        </span>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction Script for Real-time Dashboard Elements -->
+<script>
+    function updateClock() {
+      const clockElement = document.getElementById('live-clock');
+      if (clockElement) {
+        const now = new Date();
+        clockElement.textContent = now.toLocaleTimeString('es-AR', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true
+        });
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+  <!-- Navegación Flotante y Estilos del Hub de Prototipos -->
+  <link rel="stylesheet" href="../../styles/hub.css">
+  <script src="../../scripts/prototype-nav.js" defer></script>
+</body></html>

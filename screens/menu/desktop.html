@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amendola Pastelería | Menú y Pedidos Online</title>
+<!-- Google Fonts: EB Garamond & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined (Exact literal transcription required) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#76574a",
+            "secondary": "#486550",
+            "on-tertiary-fixed-variant": "#60401a",
+            "inverse-primary": "#e6bead",
+            "primary-container": "#4a3024",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fff8f2",
+            "on-primary-container": "#bc9787",
+            "surface-container-high": "#f0e7dc",
+            "primary": "#321b10",
+            "secondary-fixed-dim": "#aeceb5",
+            "background": "#fff8f2",
+            "surface-container-low": "#fbf2e7",
+            "tertiary-container": "#4d300b",
+            "on-surface": "#1f1b15",
+            "tertiary-fixed": "#ffddbb",
+            "inverse-surface": "#343029",
+            "surface-variant": "#eae1d6",
+            "on-tertiary-fixed": "#2b1700",
+            "on-surface-variant": "#504440",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#4e6b56",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#c2976a",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#e6bead",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#5c4033",
+            "primary-fixed": "#ffdbcc",
+            "tertiary": "#331c00",
+            "outline": "#82746f",
+            "surface": "#fff8f2",
+            "on-secondary-fixed": "#042010",
+            "tertiary-fixed-dim": "#ecbe8d",
+            "secondary-fixed": "#caebd0",
+            "on-secondary-fixed-variant": "#314d39",
+            "surface-container": "#f6ede2",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#eae1d6",
+            "on-error": "#ffffff",
+            "surface-dim": "#e1d9ce",
+            "on-background": "#1f1b15",
+            "outline-variant": "#d4c3bd",
+            "on-primary-fixed": "#2c160c",
+            "inverse-on-surface": "#f8efe4",
+            "secondary-container": "#caebd0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.25rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "gutter-desktop": "2rem",
+            "margin-desktop": "3rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["EB Garamond"],
+            "headline-lg-mobile": ["EB Garamond"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["EB Garamond"],
+            "headline-lg": ["EB Garamond"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["EB Garamond"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-xl": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-md": ["26px", { "lineHeight": "34px", "fontWeight": "500" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+            "headline-xl-mobile": ["34px", { "lineHeight": "42px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-xl": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-warm-shadow {
+      box-shadow: 0 4px 16px rgba(74, 48, 36, 0.05);
+    }
+    .custom-warm-shadow-hover:hover {
+      box-shadow: 0 10px 24px rgba(74, 48, 36, 0.09);
+    }
+    .custom-cart-shadow {
+      box-shadow: 0 20px 48px rgba(74, 48, 36, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-full flex flex-col selection:bg-secondary selection:text-surface">
+<!-- Top Announcement Bar -->
+<div class="bg-secondary text-surface py-2.5 px-4 text-center text-body-sm font-body-sm tracking-wide flex items-center justify-center gap-3">
+<span class="flex items-center gap-1.5 font-label-md text-label-md bg-secondary-fixed text-on-secondary-fixed px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[15px]" data-icon="local_fire_department">local_fire_department</span>
+      Promo Dulce Semana
+    </span>
+<span>6 Cookies x $4.800 — Combinalas a tu gusto y ahorrá $900</span>
+<button class="underline ml-2 font-label-md text-label-md hover:text-surface-bright transition-colors">Aprovechar Promo</button>
+</div>
+<!-- Shared Component: TopNavBar (Exact JSON execution and layout) -->
+<header class="bg-surface dark:bg-inverse-surface docked full-width top-0 sticky z-50 shadow-sm">
+<div class="flex justify-between items-center w-full px-8 max-w-7xl mx-auto h-20">
+<!-- Left Brand & Location -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-3 group" href="#">
+<img alt="Amendola Pastelería" class="w-12 h-12 rounded-full object-cover shadow-sm transition-transform duration-200 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOUAv19frv5X11Li0TCFUffhYj5ZqrDV2-MoiaTK1r2D6t4ZG4jH3txaGAo0BA-KP1Y4swf3_v-AI5K6q8AC1usubOdkvgfHqwPzBklVXJRN1U_MisvdUdHkedpbQT2g51bEYeeLeAF3q20myigFesQMOYltu05mZ9BE_q3FOt5tT-fzDFieR4LSholxFvcRnav_MNDiEvUS9fj55daNCifiR9BMl1AGhFR7_rsQDQaQhppU2Kfyrz94Qn-2fsjM0l3Q"/>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary dark:text-inverse-primary tracking-wide">Amendola Pastelería</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary" data-icon="pin_drop">pin_drop</span>
+              Recoleta, Quintana 452
+            </span>
+</div>
+</a>
+<!-- Search Bar (on_left as designated in JSON) -->
+<div class="hidden lg:flex items-center relative ml-4 w-64">
+<span class="material-symbols-outlined absolute left-3 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full bg-surface-container rounded-lg pl-9 pr-3 py-1.5 text-body-sm font-body-sm text-on-surface placeholder:text-outline border border-outline-variant/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Buscar cookies, tartas..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links from JSON (Menú is Active intent) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-inverse-primary font-label-lg text-label-lg border-b-2 border-primary dark:border-inverse-primary pb-1 transition-all duration-200 ease-in-out" href="#menu">Menú</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 py-1 px-2 rounded" href="#promociones">Promociones</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 py-1 px-2 rounded" href="#nosotros">Nosotros</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 py-1 px-2 rounded" href="#contacto">Contacto</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 py-1 px-2 rounded" href="#admin">Admin</a>
+</nav>
+<!-- Trailing Actions from JSON -->
+<div class="flex items-center gap-4">
+<!-- Order Mode Toggle (Takeaway / Delivery) -->
+<div class="hidden sm:flex items-center bg-surface-container rounded-full p-1 border border-outline-variant/40 text-label-sm font-label-sm">
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary shadow-sm font-semibold transition-all">
+<span class="material-symbols-outlined text-[15px]" data-icon="moped">moped</span>
+            Delivery 30-45m
+          </button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[15px]" data-icon="storefront">storefront</span>
+            Takeaway
+          </button>
+</div>
+<!-- Person / Profile -->
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container transition-colors" title="Foto de perfil del cliente de Amendola">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+</button>
+<!-- Shopping Cart Trigger with Active Badge -->
+<button class="flex items-center gap-2.5 bg-primary-container text-on-primary hover:bg-primary px-4 py-2 rounded-lg transition-colors custom-warm-shadow">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-label-md text-label-md font-medium">2 ítems ($2.350)</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Hero Context / Artisan Note Banner -->
+<section class="max-w-7xl mx-auto w-full px-8 pt-8 pb-4">
+<div class="bg-surface-container-low border border-outline-variant/50 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden custom-warm-shadow">
+<div class="flex items-start gap-4 z-10">
+<div class="w-12 h-12 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-2xl" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-headline-lg text-headline-lg text-primary">Pastelería de Especialidad &amp; Obrador Artesanal</h1>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2.5 py-0.5 rounded-full">Abierto Hoy</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+            Masa madre lenta, manteca pura de tambo y chocolate belga de origen. Confecciones frescas horneadas diariamente en nuestro obrador de Recoleta.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 z-10">
+<div class="text-right hidden sm:block">
+<span class="block font-label-md text-label-md text-on-surface">Horarios Hoy</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">08:00 a 20:00 hs</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/50 hidden sm:block"></div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-label-sm text-primary">Retiros inmediatos en local</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Filter Horizontal Chips -->
+<section class="max-w-7xl mx-auto w-full px-8 py-4">
+<div class="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm whitespace-nowrap">
+        Todas las Delicias
+      </button>
+<button class="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md border border-outline-variant/30 transition-colors whitespace-nowrap">
+        Cookies Artesanales
+      </button>
+<button class="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md border border-outline-variant/30 transition-colors whitespace-nowrap">
+        Waffles Belgas
+      </button>
+<button class="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md border border-outline-variant/30 transition-colors whitespace-nowrap">
+        Medialunas &amp; Croissants
+      </button>
+<button class="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md border border-outline-variant/30 transition-colors whitespace-nowrap">
+        Budines Caseros
+      </button>
+<button class="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md border border-outline-variant/30 transition-colors whitespace-nowrap">
+        Cafetería de Especialidad
+      </button>
+</div>
+</section>
+<!-- Main Content Layout (Catalog Grid + Floating Mini Cart) -->
+<main class="max-w-7xl mx-auto w-full px-8 py-6 flex-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Catalog Section (8 Columns) -->
+<div class="lg:col-span-8">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-headline-md text-primary">Nuestra Selección de Temporada</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mostrando 6 especialidades de pastelería</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Product 1: Cookie Red Velvet con Nutella -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 custom-warm-shadow custom-warm-shadow-hover transition-all duration-200 flex flex-col group">
+<div class="relative h-52 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A decadent, thick red velvet cookie fresh from the oven, broken open to reveal a luscious warm molten Nutella center with white chocolate chips glistening in soft boutique studio bakery lighting. Warm beige textured parchment background with subtle cocoa tones and rustic eucalyptus leaf touches in high definition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDirNuSxhldPJNMceHROUpnzVqBf9_-RsCnszKIHiVACAQoXpEbidw_LnSiZChmgoWJ2Ygf8vlnbct1shMjtaG-BDow3QA2qXnRHQl_nnxWIDa0vmqvRbUtvariOinuxOl1Cusfkp6y-ErUr2LIjLq_xOUsoLSe-igbOV0SxgqInIe6fBAQR1lhdz0J-muEl4UW5z4e7biuuCNV6NGKRRP1kOOPVf8ueulFJLBwzPPr5ZHrwso7YrPB"/>
+<span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2.5 py-1 rounded-full shadow-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="star">star</span>
+                Favorito
+              </span>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded">
+                Puro Cacao
+              </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-baseline gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-surface-tint transition-colors">Cookie Red Velvet con Nutella</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">$950</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Masa aterciopelada de cacao suave rellena de abundante Nutella y chips blancos. Horneada fresca a diario.
+                </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_mall">local_mall</span>
+                  Lista para retiro
+                </span>
+<button class="bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                  + Agregar
+                </button>
+</div>
+</div>
+</article>
+<!-- Product 2: Waffle Belga con Frutos Rojos -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 custom-warm-shadow custom-warm-shadow-hover transition-all duration-200 flex flex-col group">
+<div class="relative h-52 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An artisanal golden Belgian liege waffle topped with plump fresh raspberries, blueberries, blackberries and a delicate cloud of whipped cream, dusted with powdered sugar. Warm natural sunlight illuminating a rustic ceramic plate on a warm cream linen tablecloth in an elegant patisserie cafe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAan9DngmyXU0Kw74mYL6A4x1OU1XCr4mONoegVcM9AKzxFD1XnCQcD7pS3qcRfcqPY0heAvk_5JDYvzVLwN9Jrgxa7Ra9okcjaWX_nccv4susPDlb4C_ktwAhSE2PIEdG0U5EqPk1-NwBc_t2mWh6faHHNCAsDPl_DBSas-RoPMumpXrV4MoGZe7h-YYbdJAEdioRhuxeH2mA6p_mVjQPzQL8IZe4VGK0EEela-Rr3E2v2ykXsjYhr"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest text-primary text-label-sm font-label-sm px-2.5 py-1 rounded-full shadow-sm font-semibold">
+                Especiales
+              </span>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded">
+                Azúcar Perlado
+              </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-baseline gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-surface-tint transition-colors">Waffle Belga con Frutos Rojos</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">$1.400</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Receta auténtica de Lieja con masa caramelizada, frutos rojos patagónicos y crema chantilly artesanal.
+                </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="timer">timer</span>
+                  Elaborado al momento
+                </span>
+<button class="bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                  + Agregar
+                </button>
+</div>
+</div>
+</article>
+<!-- Product 3: Medialunas de Manteca x3 -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 custom-warm-shadow custom-warm-shadow-hover transition-all duration-200 flex flex-col group">
+<div class="relative h-52 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Trio of glistening, golden brown Argentine medialunas de manteca arranged artfully on a patisserie cooling rack, coated with sweet fragrant syrup glaze. Warm morning cafe light casting delicate soft shadows over artisanal linen with botanical sage sprigs nearby." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXyyMNFA2hMRxa-WkeBV3H2k375wc5dD2-qLnnks1X9PgAOT3qmNQlDz2BXinuiU5d88ri0CR47bNhvy-4c9i6hfoU6jx8Bll7Y_8EWPhw1toOEnZ0Mx1e5EjcrD5Fke99eh9FVndcT2SPFjIq111T-5eRbUcnueW5_k__uquTcp8LLCYNBGraVZcwjzdBCns29dWLI1M91xCtlQdmmTmjR__wFhbe5dQ9r6gXFxwrVhsDx9pmVzmc"/>
+<span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2.5 py-1 rounded-full shadow-sm font-semibold">
+                Viennoiserie
+              </span>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded">
+                100% Manteca
+              </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-baseline gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-surface-tint transition-colors">Medialunas de Manteca x3</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">$1.100</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Hojaldre tradicional reposado por 48 horas con manteca pura de tambo y almíbar aromatizado con cítricos.
+                </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="bakery_dining">bakery_dining</span>
+                  Recién horneadas
+                </span>
+<button class="bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                  + Agregar
+                </button>
+</div>
+</div>
+</article>
+<!-- Product 4: Budín de Limón y Arándanos -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 custom-warm-shadow custom-warm-shadow-hover transition-all duration-200 flex flex-col group">
+<div class="relative h-52 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sliced gourmet lemon blueberry loaf cake with thick white lemon sugar glaze dripping elegantly down the sides, filled with burst blueberries. Set in a warm boutique bakery counter with neutral cream tones, soft daylight, and organic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIjjsSQuqZV8s68etMgboHmz2F03rfLWYLacBcU_RPaP6vF5EuZnm2vsWNK6a7LTFYszKohBzx8Eqq0w08iEnsfrZQF4is8LIk0w2rLVdkCNTTZJXVf2OVDtKTIeCyiVZwSa3eTB-qMTEi_gqhH-Wth384MEvvMtaWTe-Z1OCC6TPIIiIxOXhkhJ_ao0JjXM3TozmR8PYveExHE6yLVt-GZMSvvi1NSL8xIvUZuIsxbtBN2SEbSXCl"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest text-primary text-label-sm font-label-sm px-2.5 py-1 rounded-full shadow-sm font-semibold">
+                Pastelería Casera
+              </span>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded">
+                Glaseado Real
+              </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-baseline gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-surface-tint transition-colors">Budín de Limón y Arándanos</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">$1.850</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Miga húmeda con ralladura fresca de limones tucumanos, arándanos enteros y glaseado crujiente.
+                </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="cake">cake</span>
+                  Pieza entera 450g
+                </span>
+<button class="bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                  + Agregar
+                </button>
+</div>
+</div>
+</article>
+<!-- Product 5: Super Cookie Choco Chips Clásica NYC -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 custom-warm-shadow custom-warm-shadow-hover transition-all duration-200 flex flex-col group">
+<div class="relative h-52 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An authentic thick Levain style chocolate chip walnut cookie broken into halves, showcasing gooey melted chocolate pockets and toasted walnuts in the center. Warm artisan bakery scene on parchment paper with soft warm natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzW4ha1hgzq7kQvKv0uIGiLEuWjGg8kbvrztWuOA9VCTs7rWrwdgVWput_cLwiz0qF2naFcZWSiVtG9u4IDSbP0kZyc6xayGFS5qmrFCrxRa1sLlKKALVUrfPOrGn2PxaoMkbG8uUhqBYRsZfQfHjSVE5bG4rKAjid09itBlEWuiQdh2q-OxFPVT75vI_g4HfCPlKwFhLKP1zRvATiQ6dLCQbKJV9gExITpDeJEI9Hchq1sAxCnInU"/>
+<span class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2.5 py-1 rounded-full shadow-sm font-semibold">
+                Clásico NYC
+              </span>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded">
+                125 gramos
+              </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-baseline gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-surface-tint transition-colors">Super Cookie Choco Chips Clásica NYC</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">$900</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Inspiración Levain: exterior crocante dorado, centro cremoso con chocolate semiamargo al 60% y nueces tostadas.
+                </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="cookie">cookie</span>
+                  Edición Levain
+                </span>
+<button class="bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                  + Agregar
+                </button>
+</div>
+</div>
+</article>
+<!-- Product 6: Cookie Pistacho & Chocolate Blanco -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/40 custom-warm-shadow custom-warm-shadow-hover transition-all duration-200 flex flex-col group">
+<div class="relative h-52 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An artisanal pistachio and white chocolate gourmet cookie with chopped emerald green pistachios on top, displaying a soft buttery crumb texture. Warm studio still life setting on cream ceramic tile with warm subtle earth tones and soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6o0DHePdsKLWwhR-zY9XU_a1McJ7QP0DzZkHEmL3hVAhslT5hckUG_jDglxNgcDtDxjVTOoWXHPLQ9KE73WYZ_sr1Gm_mLazioj0Azf867-iMhinGd7iEWjFWY8BweqCscIKDyKMm7Iu23oUojYE-e_7jk2c_LcNHZqyvwDfZDxd3tRFpbFfHYaq7lAQiKpZCRrZoq6mYMRMH6_39zBWMcTJP7zyUvynq8ZygAz8ELOkfvJDwwIaF"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest text-primary text-label-sm font-label-sm px-2.5 py-1 rounded-full shadow-sm font-semibold">
+                Edición Limitada
+              </span>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded">
+                Pistacho Bronte
+              </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-baseline gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-surface-tint transition-colors">Cookie Pistacho &amp; Chocolate Blanco</h3>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">$1.150</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Pasta pura de pistachos importados, chocolate blanco belga caramelizado y granos crocantes en cubierta.
+                </p>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="sparkles">arrow_back_ios_new</span>
+                  Receta Especial
+                </span>
+<button class="bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                  + Agregar
+                </button>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Right Docked Mini-Cart Drawer Panel (4 Columns) -->
+<aside class="lg:col-span-4 sticky top-28">
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-6 custom-cart-shadow">
+<!-- Cart Header -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="shopping_basket">shopping_basket</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Tu Pedido</h2>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2.5 py-0.5 rounded-full font-semibold">2 ítems</span>
+</div>
+<!-- Cart Items List -->
+<div class="divide-y divide-outline-variant/30 py-2">
+<!-- Item 1: Cookie Red Velvet -->
+<div class="py-3 flex gap-3 items-center">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up detail of a warm red velvet cookie with melted hazelnut cream on neutral cream linen background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfD0qDQK8cbJ5L487ZfssTkzD0FpqP9KU4qxuB41QEKnUaaWT-wKLUbhRZId2ZctWFhQma1WzLLZlClv4Aq0MIMI4Ginjg2JESQaBUOt6fPhX6seDmDJpp7T84ZtOKBDDjOQzKvrxotC9b80F09f5H7Jt9t_txqX5av1HX6NvsI4QKtATWz20R9CyjsUI6ysZO0_wX-xzY3FyRYMw79itIlOLFlIpRKb0dnXGRakQNFTUNA4J2M3QR"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-label-md text-label-md text-primary truncate">Cookie Red Velvet con Nutella</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">$950 c/u</p>
+<!-- Stepper -->
+<div class="flex items-center gap-2 mt-1.5">
+<div class="flex items-center border border-outline-variant/40 rounded-full bg-surface-container-low px-2 py-0.5 text-label-sm font-label-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]" data-icon="remove">remove</span>
+</button>
+<span class="px-2 font-semibold text-primary">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]" data-icon="add">add</span>
+</button>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1" title="Eliminar">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg font-bold text-primary">$950</span>
+</div>
+</div>
+<!-- Item 2: Waffle Belga con Frutos Rojos -->
+<div class="py-3 flex gap-3 items-center">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Delicious warm liege waffle with fresh berries served on warm parchment paper in soft patisserie light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADX_VlrxrHnzwgsuMLWKPIkv5ky7jjl92DeijjkDTCtBx3FNCZQg1-ixxSKGHijwaIGIYHdH1HWRiVFAOlLQQivFtdWtNTNaV5-4bhJET9x5ZPIFTYLKfK6dRv2cngPxGIP1lynDHAgKNHB1dSJeB3LgblTHnA1MHhFZiO8UsSMpjP4J4WyIMQdUeQCHoAzmbInMoUu5rU3rYLDAp9jthcMsztJYWvWZ2b0mX2QtYHDfFZgSmtrVhV"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-label-md text-label-md text-primary truncate">Waffle Belga con Frutos Rojos</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">$1.400 c/u</p>
+<!-- Stepper -->
+<div class="flex items-center gap-2 mt-1.5">
+<div class="flex items-center border border-outline-variant/40 rounded-full bg-surface-container-low px-2 py-0.5 text-label-sm font-label-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]" data-icon="remove">remove</span>
+</button>
+<span class="px-2 font-semibold text-primary">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]" data-icon="add">add</span>
+</button>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1" title="Eliminar">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-lg text-label-lg font-bold text-primary">$1.400</span>
+</div>
+</div>
+</div>
+<!-- Applied Promotion Box -->
+<div class="mt-3 p-3 bg-secondary-container/40 rounded-lg border border-secondary-container flex items-center justify-between text-body-sm font-body-sm text-on-secondary-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="loyalty">loyalty</span>
+<span>¡Agregá 4 cookies más y sumás promo dulce!</span>
+</div>
+<span class="material-symbols-outlined text-sm cursor-pointer" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Financial Breakdown -->
+<div class="mt-4 pt-4 border-t border-outline-variant/40 space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal productos</span>
+<span>$2.350</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Envío (Recoleta Centro)</span>
+<span class="text-secondary font-medium">Bonificado</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Packaging artesanal</span>
+<span class="text-on-surface-variant">Sin cargo</span>
+</div>
+<div class="flex justify-between font-headline-sm text-headline-sm text-primary pt-2 border-t border-outline-variant/30">
+<span>Total estimado</span>
+<span class="font-bold">$2.350</span>
+</div>
+</div>
+<!-- Delivery Mode Preference Selector -->
+<div class="mt-5 p-3 bg-surface-container rounded-lg border border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="local_shipping">local_shipping</span>
+<div>
+<span class="block text-primary font-semibold">Entrega en Domicilio</span>
+<span class="block text-on-surface-variant text-[11px]">Est. 30 a 45 minutos</span>
+</div>
+</div>
+<button class="text-secondary underline hover:text-primary">Modificar</button>
+</div>
+<!-- Primary Checkout CTA Button -->
+<button class="w-full mt-5 bg-primary-container text-on-primary hover:bg-primary py-3.5 px-4 rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-all duration-200">
+<span>Continuar compra / Checkout</span>
+<span class="font-bold">($2.350)</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Trust & WhatsApp Assistance -->
+<div class="mt-4 text-center">
+<a class="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="https://wa.me/5491112345678" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="chat">chat</span>
+              ¿Dudas con tu pedido? Consultanos por WhatsApp
+            </a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Shared Component: Footer (Exact JSON execution and layout) -->
+<footer class="bg-surface-container dark:bg-surface-container-high w-full mt-auto">
+<div class="w-full px-8 py-16 max-w-7xl mx-auto flex flex-col gap-10">
+<!-- Top Row: Brand Info + 3 Nav Columns -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Col 1: Brand & Identity -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<img alt="Amendola Pastelería" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp5sxDUQVaPAf0HO-yaTMG_nbp4NSCaljXkbXUGRxQqgUpqMmbDk9Q2-0tFKuMQlJZ3Pe8qqGPNq_GKJc0m4mpNSTnx7EmutiF2R-HgpUM5j9fFB7JcdN1tNaVJmaKTUbHcnBhvVEpuL0Dh3cO0usOMxP4Q3_D1hWeJ1bcWeJCMb5AgS4xcZTsAnam61Yn3hU-iMp-RlmSORrwBfZL4zPtRRW4w8HjJ-iFnZBIGutEbP_bDSLlSKrrDfRNvX4PD-0kFw"/>
+<span class="font-headline-md text-headline-md text-primary dark:text-inverse-primary">Amendola Pastelería</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+            Pastelería de autor, panadería dulce artesanal y cafetería de especialidad en el corazón de Recoleta.
+          </p>
+<div class="flex items-center gap-3 text-secondary pt-2">
+<a class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center hover:bg-secondary hover:text-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="public">public</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center hover:bg-secondary hover:text-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="photo_camera">photo_camera</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center hover:bg-secondary hover:text-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="mail">mail</span>
+</a>
+</div>
+</div>
+<!-- Col 2: Enlaces del Menú -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">Nuestra Carta</h4>
+<ul class="space-y-2 font-body-sm text-body-sm">
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Menú de Temporada</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Cookies Artesanales NYC</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Croissants &amp; Viennoiserie</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Tortas de Cumpleaños &amp; Eventos</a>
+</li>
+</ul>
+</div>
+<!-- Col 3: Obrador & Tienda -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">Taller &amp; Local</h4>
+<ul class="space-y-2 font-body-sm text-body-sm">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="location_on">location_on</span>
+<span class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200">Recoleta, Quintana 452</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="schedule">schedule</span>
+<span class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200">Horarios: Mar-Dom 8:00 a 20:00</span>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Nosotros &amp; Taller</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Políticas de Entrega</a>
+</li>
+</ul>
+</div>
+<!-- Col 4: Newsletter & Contacto Directo -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">Newsletter</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Suscribite para recibir lanzamientos de sabores de edición limitada y descuentos de temporada.
+          </p>
+<div class="flex items-center gap-2">
+<input class="w-full bg-surface-container-lowest text-body-sm font-body-sm px-3 py-2 rounded-lg border border-outline-variant/50 focus:outline-none focus:border-primary" placeholder="tu-email@correo.com" type="email"/>
+<button class="bg-primary-container text-on-primary hover:bg-primary px-3 py-2 rounded-lg font-label-md text-label-md transition-colors">
+              Unirse
+            </button>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Copyright exact string from JSON -->
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm">
+<p>© 2024 Amendola Pastelería Artesanal. Recoleta, Buenos Aires. Todos los derechos reservados.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Políticas de Privacidad</a>
+<a class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Términos del Servicio</a>
+<a class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Defensa de las y los Consumidores</a>
+</div>
+</div>
+</div>
+</footer>
+  <!-- Navegación Flotante y Estilos del Hub de Prototipos -->
+  <link rel="stylesheet" href="../../styles/hub.css">
+  <script src="../../scripts/prototype-nav.js" defer></script>
+</body></html>
